@@ -6,12 +6,30 @@ class ToDoItemList extends Component {
     render() {
         const { todos, onToggle, onRemove } = this.props;
 
+        const todoList = todos.map(
+            // ({id, content, isCompleted}) => (
+            //     <ToDoItem
+            //         id={id}
+            //         content={content}
+            //         isCompleted={isCompleted}
+            //         onToggle={onToggle}
+            //         onRemove={onRemove}
+            //         key={id}
+            //     />
+            // )
+            ( todo ) => (
+                <ToDoItem
+                    {...todo}
+                    onToggle={onToggle}
+                    onRemove={onRemove}
+                    key={todo.id}
+                />
+            )
+        );
+
         return (
             <div>
-                <ToDoItem content="TodoItem1" />
-                <ToDoItem content="TodoItem2" />
-                <ToDoItem content="TodoItem3" />
-
+                {todoList}
             </div>
         );
     }

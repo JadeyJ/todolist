@@ -3,7 +3,7 @@ import '../css/ToDoItem.css';
 
 class ToDoItem extends Component {
     render() {
-        const {content, isComplete, id, onToggle, onRemove} = this.props;
+        const { id, content, isComplete, onToggle, onRemove} = this.props;
 
         return (
             <div className="todo-item" onClick={() => onToggle(id)}>
