@@ -3,7 +3,7 @@ import '../css/ToDoItem.css';
 
 class ToDoItem extends Component {
     render() {
-        const { id, content, isComplete, onToggle, onRemove} = this.props;
+        const {content, isCompleted, id, onToggle, onRemove} = this.props;
 
         return (
             <div className="todo-item" onClick={() => onToggle(id)}>
@@ -13,16 +13,16 @@ class ToDoItem extends Component {
                 }>
                     &times;
                 </div>
-                <div className={`todo-item-content ${isComplete ? 'isComplete' : ' ' }`}>
+                <div className={`todo-item-content ${isCompleted && 'isComplete'}`}>
                     <div>
                         {content}
                     </div>
                 </div>
                 {
-                    isComplete && (<div className="isComplete-mark">✓</div>)
+                    isCompleted && (<div className="isComplete-mark">✓</div>)
                 }
             </div>
-        );
+        )
     }
 }
 
