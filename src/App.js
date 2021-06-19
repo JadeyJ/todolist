@@ -74,6 +74,19 @@ class App extends Component {
         });
     }
 
+    handleRemove(id) {
+        const todos = this.state.todos;
+
+        const removeContent = todos.find(todo => todo.id === id).content;
+        if(!window.confirm("'" + removeContent + "' 을 삭제하시겠습니까?")) {
+            return;
+        }
+
+        this.setState({
+            todos : todos.filter(todo => todo.id !== id)
+        });
+    }
+
     render() {
         return (
             <ToDoListTemplate form={
