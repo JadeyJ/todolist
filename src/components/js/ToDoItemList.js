@@ -3,6 +3,10 @@ import '../css/ToDoItemList.css';
 import ToDoItem from "./ToDoItem";
 
 class ToDoItemList extends Component {
+    houldComponentUpdate(nextProps, nextState) {
+        return this.props.todos !== nextProps.todos;
+    }
+
     render() {
         const { todos, onToggle, onRemove } = this.props;
 
