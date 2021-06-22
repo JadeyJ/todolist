@@ -2,9 +2,12 @@ import React, {Component} from 'react';
 import '../css/ToDoItem.css';
 
 class ToDoItem extends Component {
+    /*
+     *  Form.js 에서 hook 사용으로 여기서는 제거
     shouldComponentUpdate(nextProps, nextState) {
         return this.props.isCompleted !== nextProps.isCompleted;
     }
+    */
 
     render() {
         const {content, isCompleted, id, onToggle, onRemove} = this.props;

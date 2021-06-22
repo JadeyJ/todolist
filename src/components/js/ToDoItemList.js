@@ -3,9 +3,13 @@ import '../css/ToDoItemList.css';
 import ToDoItem from "./ToDoItem";
 
 class ToDoItemList extends Component {
-    houldComponentUpdate(nextProps, nextState) {
+
+    /*
+     *  Form.js 에서 hook 사용으로 여기서는 제거
+    shouldComponentUpdate(nextProps, nextState) {
         return this.props.todos !== nextProps.todos;
     }
+    */
 
     render() {
         const { todos, onToggle, onRemove } = this.props;
